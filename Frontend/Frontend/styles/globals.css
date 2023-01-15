@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;900&family=Rubik:wght@300;400;500;700;800;900&display=swap');
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  text-decoration: none;
+  font-family: 'Rubik', sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-maroon);
+  border-radius: 1rem;
+}
+
+body {
+  background-color: rgba(233, 233, 233, 0.342) !important;
+  max-width: 1600px;
+}
+
+:root {
+  --fs-7: .8rem;
+  --fs-8: .6rem;
+  --bg-maroon: #C9184A;
+  --bg-lightred: #D43863;
+  --bg-gray: #F2F2F2;
+  --ff-title: 'Kanit', sans-serif;
+}
+
+.bg-maroon {
+  background-color: var(--bg-maroon);
+}
+
+.bg-lightred {
+  background-color: var(--bg-lightred);
+}
+
+.bg-gray {
+  background-color: var(--bg-gray);
+}
+
+.text-maroon {
+  color: var(--bg-maroon);
+}
+
+.text-lightred {
+  color: var(--bg-lightred);
+}
+
+.fs-7 {
+  font-size: .8rem;
+}
+
+.fs-8 {
+  font-size: .6rem;
+}
+
+.ff-title {
+  font-family: 'Kanit', sans-serif;
+}
+
+._btn {
+  background-color: transparent;
+  border: none;
+  text-decoration: none;
+}
+
+.res_item {
+  display: none;
+}
+
+@media screen and (max-width: 992px) {
+  .res_item {
+    display: block;
+  }
+}

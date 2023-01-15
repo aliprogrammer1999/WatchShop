@@ -1,0 +1,186 @@
+.header {
+    height: 100px;
+}
+
+.HeaderBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.headerIcons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.logoBox {
+    display: flex;
+    justify-content: center;
+}
+
+.logoBox img {
+    width: 100%;
+    height: 100%;
+    padding: 0 3rem;
+}
+
+.NavbarMenu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    white-space: nowrap;
+}
+
+.BtnNav {
+    color: black;
+    font-weight: bold;
+    transition: all .2s;
+    position: relative;
+}
+
+.BtnNav::before {
+    content: "";
+    width: 0%;
+    top: 100%;
+    height: 2px;
+    background-color: var(--bg-maroon);
+    position: absolute;
+    transition: all 0.5s ease;
+    border-radius: 1rem;
+}
+
+.BtnNav:hover {
+    color: var(--bg-maroon);
+}
+
+.BtnNav:hover:before {
+    width: 100%;
+}
+
+.NavActive {
+    color: var(--bg-maroon);
+    position: relative;
+    font-weight: bold;
+}
+
+.NavActive::before {
+    content: "";
+    width: 100%;
+    top: 100%;
+    height: 2px;
+    background-color: var(--bg-maroon);
+    position: absolute;
+    transition: all 0.5s ease;
+    border-radius: 1rem;
+}
+
+/* respansive menu Btn  */
+.BtnMenu {
+    display: none;
+}
+
+.BtnClose {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: none;
+}
+
+.searchBox {
+    background-color: var(--bg-maroon);
+    padding: .4rem;
+    border-radius: .2rem;
+    position: absolute;
+    z-index: 9;
+    left: -150px;
+    display: none;
+}
+
+.searchBox input {
+    padding: .3rem;
+    width: 300px;
+    border-radius: .2rem;
+    border: 1px solid gray;
+}
+
+.searchBox button {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@media screen and (max-width: 1024px) {
+    .BtnMenu {
+        display: flex;
+    }
+
+    .BtnClose {
+        display: flex;
+    }
+
+    .NavbarMenu {
+        flex-direction: column;
+        position: fixed;
+        align-items: center;
+        justify-content: center;
+        gap: 3rem;
+        right: 0;
+        z-index: 10;
+        background-color: white;
+        width: 320px;
+        height: 100vh;
+        top: 0;
+        overflow: hidden;
+        transition: all .3s;
+        box-shadow: -2px 0 10px rgba(128, 128, 128, 0.562);
+        padding: 0 10px;
+    }
+
+    .NavbarMenu a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .BtnNav::before {
+        display: none;
+    }
+
+    .NavActive {
+        color: white;
+        background-color: var(--bg-maroon);
+        padding: 1rem;
+        border-radius: .5rem;
+        position: relative;
+        font-weight: bold;
+    }
+
+    .NavActive::before {
+        display: none;
+    }
+
+    .headerIcons {
+        justify-content: end;
+    }
+
+}
+
+@media screen and (max-width: 468px) {
+    .navLink_content {
+        order: 2;
+        width: 50%;
+    }
+
+    .logoBox {
+        order: 1;
+    }
+
+    .headerIcons {
+        order: 3;
+        width: 50%;
+    }
+}

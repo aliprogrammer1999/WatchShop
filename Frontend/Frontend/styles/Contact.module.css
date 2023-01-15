@@ -1,0 +1,105 @@
+.contactContainer {
+    height: max-content;
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+}
+
+.Protection {
+    height: max-content;
+    color: var(--bg-lightred);
+    border-radius: .5rem;
+    background-color: var(--bg-gray);
+    padding: 1rem;
+}
+
+.ProtectionContent {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 70%;
+    color: black;
+    justify-content: space-around;
+    padding: 1rem;
+}
+
+.contactImg {
+    height: 100%;
+}
+
+.contactImg img {
+    max-height: 300px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: .3rem;
+}
+
+.contactFrom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.contactFrom>div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.contactFrom>div>input {
+    width: 50%;
+    font-size: 1.1rem;
+    padding: .4rem 1rem;
+    border-radius: .2rem;
+    border: 1px solid gray;
+}
+
+.contactFrom textarea {
+    width: 100%;
+    height: 200px;
+    padding: 1rem;
+    border-radius: .2rem;
+    max-height: 230px;
+}
+
+.contactFrom button {
+    background-color: var(--bg-lightred);
+    color: white;
+    font-size: 1.2rem;
+    padding: .4rem 2rem;
+    border-radius: .3rem;
+}
+
+@media screen and (max-width: 992px) {
+
+    .Protection {
+        height: max-content;
+        padding: 0;
+    }
+
+    .proContent {
+        margin-bottom: 3rem;
+    }
+
+    .proContent>h3 {
+        font-size: 1.2rem;
+        padding: .5rem 0;
+    }
+
+    .ProtectionContent span {
+        font-size: .8rem;
+    }
+}
+
+@media screen and (max-width: 724px) {
+    .contactFrom>div {
+        flex-direction: column;
+    }
+
+    .contactFrom>div>input {
+        width: 100%;
+    }
+}

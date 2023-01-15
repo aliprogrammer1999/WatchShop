@@ -1,0 +1,33 @@
+.AboutCart {
+    background-color: var(--bg-gray);
+    height: 65vh;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.AboutMeImg {
+    height: 100%;
+}
+
+.AboutMeImg img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+}
+
+.AboutDetile h5{
+    margin: 1.5rem 0;
+}
+
+@media screen and (max-width: 768px) {
+    .AboutCart {
+        margin-bottom: 9rem;
+        height: max-content;
+    }
+
+    .AboutDetile h5 {
+        font-size: .9rem;
+        margin: 1rem 0;
+    }
+}
