@@ -1,9 +1,8 @@
-import React from 'react'
-import Layout from '../Components/Layout/Layout'
+import React from "react";
+import Layout from "./Components/Layout/Layout";
+
 function Shop() {
-    return (
-        <Layout>Shop</Layout>
-    )
+  return <Layout>Shop</Layout>;
 }
 
-export default Shop
+export default Shop;

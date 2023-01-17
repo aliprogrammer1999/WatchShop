@@ -4,7 +4,7 @@
   align-items: center;
   height: 350px;
   flex-direction: column;
-  width: 280px;
+  max-width: 280px;
   border-radius: 0.5rem;
   position: relative;
 }
@@ -25,5 +25,4 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }

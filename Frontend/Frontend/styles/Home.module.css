@@ -1,91 +1,111 @@
 .home {
-    height: max-content;
-    margin-bottom: 8rem;
+  height: max-content;
+  margin-bottom: 8rem;
 }
 
 .section_2 {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .bestProudctTitle {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .realTime {
-    max-height: 70vh;
-    margin: 3rem 0;
-    position: relative;
+  max-height: 70vh;
+  width: 100%;
+  margin: 3rem 0;
+  position: relative;
 }
 
 .realTime img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+  width: 100%;
+  background-color: red;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
 }
 
-.realTime>div {
-    position: absolute;
-    top: 30%;
-    right: 25%;
-    font-size: 4rem;
-    color: white;
-    user-select: none;
+.realTime > div {
+  position: absolute;
+  top: 35%;
+  left: 10%;
+  font-size: 3rem;
+  font-weight: bold;
+  user-select: none;
 }
 
 .showProduct {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
 }
 
 /* section some Content */
 .btn_cat {
-    color: var(--bg-maroon);
-    font-weight: bold;
-    padding: .3rem;
+  color: var(--bg-maroon);
+  font-weight: bold;
+  padding: 0.3rem;
 }
 
 .isActive {
-    color: var(--bg-maroon);
-    font-weight: bold;
-    background-color: var(--bg-maroon);
-    color: white;
-    padding: .3rem;
-    border-radius: .2rem;
-    transition: all .3s;
+  color: var(--bg-maroon);
+  font-weight: bold;
+  background-color: var(--bg-maroon);
+  color: white;
+  padding: 0.3rem;
+  border-radius: 0.2rem;
+  transition: all 0.3s;
 }
 
 .someProduct {
-    border: 2px solid var(--bg-maroon);
-    border-radius: .5rem;
-    transition: all .3s;
+  border: 2px solid var(--bg-maroon);
+  border-radius: 0.5rem;
+  transition: all 0.3s;
 }
 
 .someProduct:hover {
-    box-shadow: 0px 3px 10px gray;
+  box-shadow: 0px 3px 10px gray;
 }
 
 /* respansive tablet and mobile  */
 
 @media screen and (max-width: 768px) {
-    .home {
-        margin-bottom: 11rem;
-    }
+  .home {
+    margin-bottom: 11rem;
+  }
 
-    .showProduct {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
+  .showProduct {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 
-    .bestProudctTitle {
-        text-align: center;
-    }
+  .bestProudctTitle {
+    text-align: center;
+  }
 
-    .realTime>div>h4 {
-        font-size: 1rem !important;
-    }
+  .realTime>img{
+    height: 200px;
+  }
+
+  .realTime > div > h2  {
+    font-size: 1.2rem !important;
+  }
+  .realTime > div > span  {
+    font-size: 1.2rem !important;
+  }
 }
+
+@media screen and (max-width: 425px) {
+    .realTime > div > h2  {
+        font-size: .7rem !important;
+      }
+      .realTime > div > span  {
+        font-size: .7rem !important;
+      }
+}
+

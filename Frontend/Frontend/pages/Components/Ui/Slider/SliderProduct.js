@@ -12,17 +12,6 @@ function SliderProduct({ data }) {
       pagination={{
         clickable: true,
       }}
-      breakpoints={{
-        640: {
-          slidesPerView: 1,
-        },
-        768: {
-          slidesPerView: 3,
-        },
-        992: {
-          slidesPerView: 4,
-        },
-      }}
       modules={[Pagination]}
       className="mySwiper p-3"
     >

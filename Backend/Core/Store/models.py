@@ -56,5 +56,6 @@ class Product(models.Model):
         default=False, help_text="0 = default , 1=Trading")
     create_at = models.DateTimeField(auto_now_add=True)
 
+
     def __str__(self):
         return self.name

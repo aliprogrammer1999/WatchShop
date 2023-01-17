@@ -14,9 +14,24 @@ import section_2_2 from "../public/assest/Home/section_2_2.jpg";
 import banner_1 from "../public/assest/Home/sectionbanner_1.jpg";
 import banner_2 from "../public/assest/Home/sectionbanner_2.jpg";
 import TimeBG from "../public/assest/Home/deal-bg.jpg";
+import BrandSlider from "./Components/Ui/Slider/BrandSlider";
 
-export default function Home({ bestProduct }) {
-  // section 5 category style
+export default function Home({ bestProduct, posts }) {
+  const [date, setDate] = useState(new Date());
+
+  function refreshClock() {
+    setDate(new Date());
+  }
+
+  useEffect(() => {
+    const timerId = setInterval(refreshClock, 1000);
+    return function cleanup() {
+      clearInterval(timerId);
+    };
+  }, []);
+
+  // console.log(posts.category);
+  const [product, setProduct] = useState(posts);
   const [selectedIndex, setSelectedIndex] = useState();
   const [category, setCategory] = useState([
     "All",
@@ -25,6 +40,31 @@ export default function Home({ bestProduct }) {
     "Kids",
     "Jolwary",
   ]);
+
+  const CategoryHandler = (index) => {
+    setSelectedIndex(index);
+    if (index == 0) {
+      setProduct(posts);
+    }
+    if (index == 1) {
+      const woman = posts.filter((item) => item.category == 2);
+      setProduct(woman);
+    }
+    if (index == 2) {
+      const man = posts.filter((item) => item.category == 1);
+      setProduct(man);
+    }
+    if (index == 3) {
+      const kids = posts.filter((item) => item.category == 3);
+      setProduct(kids);
+    }
+    if (index == 4) {
+      const Jolwary = posts.filter((item) => item.category == 4);
+      setProduct(Jolwary);
+    }
+  };
+  // =========================================
+
   return (
     <>
       <Head>
@@ -32,13 +72,6 @@ export default function Home({ bestProduct }) {
       </Head>
       <Layout>
         <main className={HomeCss.home}>
-          {/* section 1 Home */}
-          <Container fluid>
-            <Row>
-              <Col sm="12"></Col>
-            </Row>
-          </Container>
-
           {/* section 2 Home Banner  */}
           <Container fluid="md" className="my-5">
             <Row>
@@ -70,7 +103,7 @@ export default function Home({ bestProduct }) {
             </Row>
             <Row>
               <Col sm="12">
-                <SliderProduct data={bestProduct}/>
+                <SliderProduct data={bestProduct} />
               </Col>
             </Row>
           </Container>
@@ -80,9 +113,9 @@ export default function Home({ bestProduct }) {
             <Row>
               <Col className={HomeCss.realTime}>
                 <Image src={TimeBG} alt="real time" />
-                <div className="text-center ff-title">
-                  <h4>-- Watch Shop International --</h4>
-                  {/* <Clock format={'HH:mm:ss'} ticking={true} timezone={'US/Pacific'} /> */}
+                <div className="text-center ff-title d-flex flex-column gap-3">
+                  <h2 className="fw-bold">-- Watch Shop International --</h2>
+                  <span>{date.toLocaleTimeString()}</span>
                 </div>
               </Col>
             </Row>
@@ -102,7 +135,7 @@ export default function Home({ bestProduct }) {
                           ? HomeCss.isActive
                           : HomeCss.btn_cat
                       } `}
-                      onClick={() => setSelectedIndex(index)}
+                      onClick={() => CategoryHandler(index)}
                     >
                       {item}
                     </button>
@@ -112,7 +145,9 @@ export default function Home({ bestProduct }) {
             </Row>
 
             <Row>
-              <Col sm="12" className="p-2"></Col>
+              <Col sm="12" className="p-2">
+                <SliderProduct data={product} />
+              </Col>
             </Row>
           </Container>
 
@@ -139,6 +174,13 @@ export default function Home({ bestProduct }) {
               </Col>
             </Row>
           </Container>
+          <Container>
+            <Row>
+              <Col>
+                {/* <BrandSlider /> */}
+              </Col>
+            </Row>
+          </Container>
         </main>
       </Layout>
     </>
@@ -148,10 +190,11 @@ export default function Home({ bestProduct }) {
 export async function getStaticProps() {
   const res = await fetch("http://127.0.0.1:8000/api/");
   const posts = await res.json();
-  const bestProduct = await posts.filter(best => best.rate > 4)
+  const bestProduct = await posts.filter((best) => best.rate > 4);
   return {
     props: {
       bestProduct,
+      posts,
     },
   };
 }
