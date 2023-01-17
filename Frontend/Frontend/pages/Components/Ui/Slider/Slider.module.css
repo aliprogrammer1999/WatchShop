@@ -1,0 +1,10 @@
+@media screen and (max-width: 768px) {
+  .Brandstyle img {
+    width: 110px;
+  }
+}
+@media screen and (max-width: 420px) {
+  .Brandstyle img {
+    width: 60px;
+  }
+}

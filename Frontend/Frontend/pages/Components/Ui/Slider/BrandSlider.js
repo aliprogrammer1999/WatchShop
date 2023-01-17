@@ -1,15 +1,15 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
-
+import SliderCss from "./Slider.module.css";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
 
 // import required modules
-import { FreeMode, Pagination, Autoplay } from "swiper";
+import { FreeMode, Autoplay } from "swiper";
 
 // assest
 import brandImg_1 from "../../../../public/assest/Home/brand/1.svg";
@@ -25,40 +25,45 @@ import brandImg_9 from "../../../../public/assest/Home/brand/9.svg";
 function BrandSlider() {
   return (
     <Swiper
+    autoplay={{
+      delay: 3000,
+      disableOnInteraction: false,
+    }}
       slidesPerView={4}
       spaceBetween={25}
+      centeredSlides={true}
       freeMode={true}
       pagination={{
         clickable: true,
       }}
-      modules={[FreeMode, Pagination, Autoplay]}
-      className="mySwiper"
+      modules={[FreeMode, Autoplay]}
+      className={`mySwiper ${SliderCss.Brandstyle}`}
     >
-      <SwiperSlide>
+      <SwiperSlide className="d-flex justify-content-center">
         <Image src={brandImg_1} alt="brand image_1" width={150} height={150} />
       </SwiperSlide>
-      <SwiperSlide>
+      <SwiperSlide className="d-flex justify-content-center">
         <Image src={brandImg_2} alt="brand image_2" width={150} height={150} />
       </SwiperSlide>
-      <SwiperSlide>
+      <SwiperSlide className="d-flex justify-content-center">
         <Image src={brandImg_3} alt="brand image_3" width={150} height={150} />
       </SwiperSlide>
-      <SwiperSlide>
+      <SwiperSlide className="d-flex justify-content-center">
         <Image src={brandImg_4} alt="brand image_4" width={150} height={150} />
       </SwiperSlide>
-      <SwiperSlide>
+      <SwiperSlide className="d-flex justify-content-center">
         <Image src={brandImg_5} alt="brand image_5" width={150} height={150} />
       </SwiperSlide>
-      <SwiperSlide>
+      <SwiperSlide className="d-flex justify-content-center">
         <Image src={brandImg_6} alt="brand image_6" width={150} height={150} />
       </SwiperSlide>
-      <SwiperSlide>
+      <SwiperSlide className="d-flex justify-content-center">
         <Image src={brandImg_7} alt="brand image_7" width={150} height={150} />
       </SwiperSlide>
-      <SwiperSlide>
+      <SwiperSlide className="d-flex justify-content-center">
         <Image src={brandImg_8} alt="brand image_8" width={150} height={150} />
       </SwiperSlide>
-      <SwiperSlide>
+      <SwiperSlide className="d-flex justify-content-center">
         <Image src={brandImg_9} alt="brand image9" width={150} height={150} />
       </SwiperSlide>
     </Swiper>

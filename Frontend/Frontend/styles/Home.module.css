@@ -22,7 +22,6 @@
 
 .realTime img {
   width: 100%;
-  background-color: red;
   height: 100%;
   object-fit: cover;
   border-radius: 1rem;
@@ -35,6 +34,21 @@
   font-size: 3rem;
   font-weight: bold;
   user-select: none;
+}
+
+.TimeCount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.TimeCount div {
+  width: 70px;
+  font-size: 1.9rem;
+}
+
+.TimeCount span {
+  font-size: 1rem;
 }
 
 .showProduct {
@@ -88,24 +102,46 @@
     text-align: center;
   }
 
-  .realTime>img{
-    height: 200px;
+  .realTime > img {
+    height: 300px;
   }
 
-  .realTime > div > h2  {
-    font-size: 1.2rem !important;
+  .realTime h2 {
+    font-size: 1.2rem;
   }
-  .realTime > div > span  {
-    font-size: 1.2rem !important;
+
+  .TimeCount {
+    gap: 0.5rem;
+    font-size: 1rem;
+  }
+  .TimeCount div {
+    width: 40px;
+    font-size: 1.3rem;
+  }
+
+  .TimeCount span {
+    font-size: 0.5rem;
   }
 }
 
 @media screen and (max-width: 425px) {
-    .realTime > div > h2  {
-        font-size: .7rem !important;
-      }
-      .realTime > div > span  {
-        font-size: .7rem !important;
-      }
-}
+  .realTime > div > h2 {
+    font-size: 0.7rem !important;
+  }
+  .realTime > div > span {
+    font-size: 0.7rem !important;
+  }
+  .realTime {
+    display: flex;
+    justify-content: center;
 
+    height: 200px;
+  }
+  .realTime > img {
+    display: none;
+  }
+  .realTime > div {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

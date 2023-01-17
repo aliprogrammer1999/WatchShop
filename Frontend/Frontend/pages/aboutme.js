@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { Container, Row, Col } from 'react-bootstrap'
-import Layout from '../Components/Layout/Layout'
+import Layout from './Components/Layout/Layout'
 import AboutMeCss from '../styles/AboutMe.module.css'
 import Image from 'next/image'
 import MyImage from '../public/assest/AboutMe/myImage.jpeg'

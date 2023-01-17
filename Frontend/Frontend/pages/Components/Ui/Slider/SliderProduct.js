@@ -1,22 +1,34 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Cart from "../Cart/Cart";
-import { Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 
 function SliderProduct({ data }) {
   return (
     <Swiper
-      spaceBetween={30}
+      slidesPerView={1}
+      spaceBetween={10}
       pagination={{
         clickable: true,
       }}
-      modules={[Pagination]}
-      className="mySwiper p-3"
+      breakpoints={{
+        425: {
+          slidesPerView: 2,
+          spaceBetween: 10,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 20,
+        },
+      }}
     >
       {data.map((item) => (
-        <SwiperSlide key={item.id}>
+        <SwiperSlide key={item.id} className="justify-content-center d-flex ">
           <Cart data={item} />
         </SwiperSlide>
       ))}
