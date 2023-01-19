@@ -1,3 +1,33 @@
 .shop{
-    height: 100vh;
+    height: max-content;
+    margin-bottom: 7rem;
+}
+
+.filterProduct{
+    background-color: rgb(211, 211, 211);
+    margin: 3rem 0;
+    padding: 2rem;
+    border-radius: .5rem;
+}
+
+.filterProduct select{
+    padding: .5rem;
+    border-radius: .2rem;
+    width: 100%;
+}
+
+.filterProduct input{
+    width: 95%;
+    padding: .5rem;
+    border-radius: .2rem;
+    border: 1px solid gray;
+}
+
+.filterProduct svg{
+    position: absolute;
+    left: 88%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.3rem;
+    color: gray;
 }

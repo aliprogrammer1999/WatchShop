@@ -1,6 +1,18 @@
+.BanerSlider img {
+  height: 400px;
+  border-radius: 1rem;
+  width: 100%;
+  object-fit: cover;
+  user-select: none;
+}
+
 @media screen and (max-width: 768px) {
   .Brandstyle img {
     width: 110px;
+  }
+  .BanerSlider img {
+    object-fit: contain;
+    height: max-content;
   }
 }
 @media screen and (max-width: 420px) {

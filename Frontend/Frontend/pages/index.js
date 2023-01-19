@@ -17,7 +17,7 @@ import banner_2 from "../public/assest/Home/sectionbanner_2.jpg";
 import TimeBG from "../public/assest/Home/deal-bg.jpg";
 import BrandSlider from "./Components/Ui/Slider/BrandSlider";
 
-export default function Home({ bestProduct, posts }) {
+export default function Home({ offerProduct, posts }) {
   const [product, setProduct] = useState(posts);
   const [selectedIndex, setSelectedIndex] = useState();
   const [category, setCategory] = useState([
@@ -125,7 +125,7 @@ export default function Home({ bestProduct, posts }) {
             </Row>
             <Row>
               <Col sm="12">
-                <SliderProduct data={bestProduct} />
+                <SliderProduct data={offerProduct} />
               </Col>
             </Row>
           </Container>
@@ -164,7 +164,7 @@ export default function Home({ bestProduct, posts }) {
             </Row>
           </Container>
 
-          {/* section 4 Product bestProduct  */}
+          {/* section 4 Product offerProduct  */}
           <Container>
             <Row>
               <Col sm="12" className={HomeCss.showProduct}>
@@ -236,10 +236,10 @@ export default function Home({ bestProduct, posts }) {
 export async function getStaticProps() {
   const res = await fetch("http://127.0.0.1:8000/api/");
   const posts = await res.json();
-  const bestProduct = await posts.filter((best) => best.rate > 4);
+  const offerProduct = await posts.filter((best) => best.offer);
   return {
     props: {
-      bestProduct,
+      offerProduct,
       posts,
     },
   };

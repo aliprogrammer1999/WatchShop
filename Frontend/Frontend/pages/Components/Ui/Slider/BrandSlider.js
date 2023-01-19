@@ -9,7 +9,7 @@ import "swiper/css/free-mode";
 import "swiper/css/pagination";
 
 // import required modules
-import { FreeMode, Autoplay } from "swiper";
+import { Autoplay } from "swiper";
 
 // assest
 import brandImg_1 from "../../../../public/assest/Home/brand/1.svg";
@@ -25,10 +25,10 @@ import brandImg_9 from "../../../../public/assest/Home/brand/9.svg";
 function BrandSlider() {
   return (
     <Swiper
-    autoplay={{
-      delay: 3000,
-      disableOnInteraction: false,
-    }}
+      autoplay={{
+        delay: 3000,
+        disableOnInteraction: false,
+      }}
       slidesPerView={4}
       spaceBetween={25}
       centeredSlides={true}
@@ -36,7 +36,7 @@ function BrandSlider() {
       pagination={{
         clickable: true,
       }}
-      modules={[FreeMode, Autoplay]}
+      modules={[Autoplay]}
       className={`mySwiper ${SliderCss.Brandstyle}`}
     >
       <SwiperSlide className="d-flex justify-content-center">
